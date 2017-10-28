@@ -1,5 +1,5 @@
 body {
-	color: #8f8f8f;
+	color: #fff;
 	font: 12px Tahoma, sans-serif;
 	background-image: url('/static/img/Rick-blog.png');
 	background-size: cover;
@@ -49,6 +49,7 @@ form[name="search"] {
 
 nav a {
 	text-decoration: none;
+	color: #29c5e6;
 }
 
 nav ul {
@@ -66,6 +67,7 @@ nav li {
 	display: inline-block;
 	padding: 10px 30px;
 	margin: 0;
+	color: #fff;
 }
 
 .navbar-nav li.active {
@@ -74,7 +76,7 @@ nav li {
 }
 
 .navbar-nav a {
-	color: #b2b2b2;
+	color: #fff;
 }
 
 #heading {
@@ -83,39 +85,9 @@ nav li {
 	padding-left: 20px;
 }
 
-h1 {
-	display: inline-block;
-	color: #7e7e7e;
-	font: 40px/40px 'Oswald', sans-serif;
-	background: url(/static/img/images/KHL.jpg);
-	margin: 0;
-	padding: 0 10px;
-}
-
-aside {
-	float: left;
-	width: 250px;
-}
 section {
 	margin-left: 280px;
 	padding-bottom: 50px;
-}
-.aside-menu li {
-	font-weight: 300;
-	list-style-type: square;
-	border-top: 1px solid #e7e7e7;
-}
-
-.aside-menu li:first-child {
-	border: none;
-}
-
-.aside-menu li.active {
-	color: #29c5e6;
-}
-
-.aside-menu a {
-	color: #8f8f8f;
 }
 
 blockquote {
@@ -165,15 +137,12 @@ figure figcaption span {
 	font-size: 14px;
 	color: #29c5e6;
 }
-section > figure + figure {
-	margin-left: 28px;
-}
+
 
 section > h2 {
-	background: #29c5e6;
+	background-color: rgba(227,242,253,0.5);
 	font: 30px 'Oswald', sans-serif;
 	font-weight: 300;
-	color: #fff;
 	padding: 0 10px;
 	margin: 30px 0 0 0;
 }
@@ -182,11 +151,7 @@ figure figcaption {
 	font-size: 16px;
 	font-weight: 300;
 	margin-top: 5px;
-}
-
-figure div {
-	font-size: 14px;
-	color: #29c5e6;
+	background-color: rgba(227,242,253,0.5);
 }
 
 .team-row figure {
@@ -197,7 +162,7 @@ figure div {
 	margin-left: 43px;
 }
 footer {
-	background: #7e7e7e;
+	background: rgba(227,242,253,0.5);
 	color: #dbdbdb;
 	font-size: 11px;
 }
@@ -207,11 +172,13 @@ footer {
 	margin: auto;
 	padding: 10px 0;
 	height: 90px;
+	background: rgba(227,242,253,0.5);
+	float: bottom
 }
 
 
 footer a {
-	color: #dbdbdb;
+	color: rgba(227,242,253,0.5);
 }
 
 #sitemap {
@@ -269,3 +236,80 @@ footer a {
 .vk {
 	background-image: url('/static/img/VK.png');
 }
+
+.ice-field{
+background: #fff url(//s5o.ru/common/css/i/fantasy/ice.png) no-repeat 0 0;
+height: 900px;
+position: relative;
+float: left
+}
+
+.ice{
+background: rgba(227,242,253,0.5);
+width: 360px;
+height: 650px;
+position: relative;
+float: left
+}
+
+.half{
+	height: 314px
+}
+
+.players-container{
+	padding: 20px 0 0;
+text-align: center;
+white-space: nowrap
+}
+
+.ice .player{
+	display: inline-block;
+width: 100px;
+height: 78px;
+cursor: pointer;
+font-size: 11px;
+color: #000;
+text-decoration: none;
+text-align: center;
+vertical-align: top;
+position: relative;
+z-index: 2
+}
+
+.center-half{
+height: 216px;
+margin: 10px 0
+}
+
+.transfer-form .team-info-block{
+	margin-left: 380px
+}
+
+.team-info-block{
+	margin-left: 360px;
+position: relative
+}
+
+.foot-transfer, .transfer-filter{
+background: rgba(155, 214, 232, 0.34);
+padding: 20px 20px 0;
+height: 60px;
+overflow: hidden
+}
+
+.transfer-filter .player-select{
+width: 130px;
+float: left
+}
+
+.button, .input, .select, .textarea{
+font-family: inherit;
+font-size: inherit;
+line-height: inherit;
+font: normal 11px Arial;
+color: #000;
+outline: none
+}
+
+
+

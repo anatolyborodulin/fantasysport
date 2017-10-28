@@ -1,0 +1,104 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Fantasy Hockey</title>>
+    <!-- Bootstrap CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" />
+     <link href="/static/css/main.css" rel="stylesheet" />
+     <link href="/static/css/dopstyle.css" rel="stylesheet" media="screen">
+     <link rel="stylesheet" href="css/fontAwesome.css">
+     <link rel="stylesheet" href="css/templatemo-style.css">
+
+
+  </head>
+  <body>
+  
+    {% include 'navigation.html' %}
+
+    <h1>Registration</h1>
+    <form class="form">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" class="form-control" id="username" placeholder="Username">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+        </div>
+
+        <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstname" class="form-control" id="firstname" placeholder="First Name">
+        </div>
+
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Last Name">
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <button id="submitNewUser" class="btn btn-primary">Create User</button>
+        </div>
+    </form>
+
+    <br />
+    <div class="alert alert-success alert-dismissable hidden" id="add-user-success">
+        <span>
+            <p>User successfully added!</p>
+        </span>
+    </div>
+    <div class="alert alert-danger alert-dismissable hidden" id="add-user-failed">
+        <span>
+            <p><span id="error-message"></span></p>
+        </span>
+    </div>
+
+
+    <script>
+
+    function addedUser(data){
+        if (data.status == "OK"){
+            $('#add-user-success').removeClass('hidden');
+        } else {
+            $('#add-user-failed').removeClass('hidden');
+            $('#error-message').text(data.info);
+
+        }
+    };
+
+    function sendNewUser(){
+        var newUser = {
+            username: $("#username").val(),
+            password: $("#password").val(),
+            firstname: $("#firstname").val(),
+            lastname: $("#lastname").val(),
+            email: $("#email").val(),
+        };
+        $.ajax({
+            type: "POST",
+            dataType: 'json',
+            data: JSON.stringify(newUser),
+            contentType: "application/json; charset=utf-8",
+            url: "/json/users",
+            success: addedUser
+        });
+    };
+
+    $("#submitNewUser").click(function(event){
+        event.preventDefault();
+        $('#add-user-success').addClass('hidden');
+        $('#add-user-failed').addClass('hidden');
+        sendNewUser();
+    });
+
+    </script>
+
+{% include "endblock.html" %}

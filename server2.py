@@ -6,25 +6,30 @@ my_flask_app = Flask(__name__)
 def index():
 	return render_template('index.html')
 
-@my_flask_app.route('/news/')
+@my_flask_app.route('/main/')
 def news():
-	return render_template('all_the_news.html')
+	return render_template('index.html')
 
-@my_flask_app.route('/leagues/')
+@my_flask_app.route('/games/')
 def leagues():
-	return render_template('khl_league.html')
+	return render_template('games.html')
 
-@my_flask_app.route('/ranking/')
+@my_flask_app.route('/players/')
 def ranking():
-	return render_template('top_ranking.html')
+	return render_template('players.html')
 
 @my_flask_app.route('/rules/')
 def rules_game():
-	return render_template('how_to_play.html')
+	return render_template('rules.html')
 
 @my_flask_app.route('/login/', methods=['POST'])
 def login():
 	return render_template('login.html', email=request.form.get('email'), password=request.form.get('passwrd'))
 
+@my_flask_app.route('/addteam/')
+def addteam():
+	return render_template('addteam.html')
+
 if __name__ =='__main__':
 	my_flask_app.run(port=5015, debug=True)
+	

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Fantasy Hockey</title>>
+    <!-- Bootstrap CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" />
+     <link href="/static/css/main.css" rel="stylesheet" />
+     <link href="/static/css/dopstyle.css" rel="stylesheet" media="screen">
+     <link rel="stylesheet" href="css/fontAwesome.css">
+     <link rel="stylesheet" href="css/templatemo-style.css">
+
+
+  </head>
+  <body>
+
+  {% include 'navigation.html' ignore missing%}
+
+  </body>
+
+<!--   сюда надо подтянуть статистику по всем игрокам :) -->
+<section>
+      <blockquote>
+        <p> Собрать свою команду </p>
+
+<div class="newteam-popup" style="top: 100px;"><span class="but close-x corners-3px"></span>
+<form method="GET" action="addteam.html">
+  <table cellpadding="0" cellspacing="0" border="0">
+    <tbody><tr>
+      <th>Турнир</th>
+      <td>
+        <select class="tournament" name="tournament">
+            <option value="107">КХЛ</option>
+            <option value="123">НХЛ</option> 
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>Любимый клуб</th>
+      <td>
+        <select class="club" name="club">
+            
+            <option value="764">Беларусь</option>
+            
+            <option value="766">Германия</option>
+            
+            <option value="767">Дания</option>
+            
+            <option value="7463">Италия</option>
+            
+            <option value="768">Канада</option>
+            
+            <option value="769">Латвия</option>
+            
+            <option value="770">Норвегия</option>
+            
+            <option value="762">Россия</option>
+            
+            <option value="771">Словакия</option>
+            
+            <option value="8702">Словения</option>
+            
+            <option value="772">США</option>
+            
+            <option value="773">Финляндия</option>
+            
+            <option value="774">Франция</option>
+            
+            <option value="775">Чехия</option>
+            
+            <option value="776">Швейцария</option>
+            
+            <option value="777">Швеция</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>Название вашей команды</th>
+      <td><span class="input-box"><span><input autocomplete="off" class="name" name="name" type="text" value="" maxlength="50"></span></span> Не более 50 знаков</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td class="statuses">
+        <div class="info-line name-testing" style="display: none;">Проверка названия...</div>
+        <div class="info-line red-text name-s402" style="display: none;">Неверное название команды.</div>
+        <div class="info-line red-text name-s403" style="display: none;">Вы уже создали команду в этом турнире.</div>
+        <div class="info-line red-text name-s405" style="display: none;">Команда с таким названием уже сущестует.</div>
+        <div class="info-line red-text name-s406" style="display: none;">Войдите на сайт или зарегистрируйтесь.</div>
+        <div class="info-line red-text name-s500" style="display: none;">Произошла ошибка. Обновите страницу.</div>
+        <div class="info-line green-text name-free" style="display: none;">Название свободно.</div>
+        <input type="button" value="Готово" onClick='location.href="/addteam/"'>
+        </input>
+        </form>
+      </td>
+    </tr>
+  </tbody></table>
+</form></div>
+</blockquote>     
+
+</section>
+</section>
+
